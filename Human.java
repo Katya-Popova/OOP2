@@ -167,8 +167,4 @@ public class Human {
     public String toString(){
         return "\n"+"Имя: " + name +" "+ patronymic + dateLife()+ ", пол " +gender + "., "+ getFatherInfo() + ",  "+ getMatherInfo() + ", "+ getChildrenInFo()  ;
     }
-   
-
- 
 }
-
