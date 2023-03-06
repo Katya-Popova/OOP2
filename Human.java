@@ -1,9 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-
-public class Human {
+public class Human  implements Serializable{
     private String name;
     private String patronymic;
     private String dateBirth;
@@ -18,10 +18,6 @@ public class Human {
     public Human (String name,String patronymic, String dateBirth,Gender gender){
         this(name, patronymic, dateBirth, null,gender, null, null,null);
     }
-
-
-
-
 
     public Human (String name,String patronymic,String dateBirth,String dateDeath,Gender gender,Human father,Human mather,Human human){
         this.name=name;
@@ -159,12 +155,18 @@ public class Human {
         return children;
     }
 
-    public void setChildren(List<String> children) {
+    public void setChildren(List<Human> children) {
         this.children = children;
     }
   
     @Override
     public String toString(){
-        return "\n"+"Имя: " + name +" "+ patronymic + dateLife()+ ", пол " +gender + "., "+ getFatherInfo() + ",  "+ getMatherInfo() + ", "+ getChildrenInFo()  ;
+        return "\n"+"Имя: " + name +" "+ patronymic + dateLife()+ ", пол " +gender + "., "+ getFatherInfo() + ",  "+ getMatherInfo() + ", "+ getChildrenInFo();
     }
+    public void saveObj(IO save)
+    {
+        save = new IO();
+        save.save("FreeFamily.data", this);
+    }
+
 }
