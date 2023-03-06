@@ -47,4 +47,20 @@ public class FamilyTree {
         return humanList.toString();
 }
 
+
+
+    public List<Human> getHumanList() {
+        return humanList;
+    }
+
+
+
+    public void setHumanList(List<Human> humanList) {
+        this.humanList = humanList;
+    }
+
+
+
+
+
 }
